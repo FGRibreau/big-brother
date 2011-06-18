@@ -1,0 +1,67 @@
+body{
+	font:14px arial,sans-serif;
+}
+
+body,a,a:visited,input,div,p,label,input,h1,h2,h3,ul,li{
+	margin:0;
+	padding:0;
+	list-style-type: none;
+}
+
+a, a:visited{
+	color:#2276BB;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+header {-webkit-border-radius:0 0px 10px 10px;
+	z-index:100;
+	background-color:#ffffff;
+	position:absolute;
+	left:100px;
+	top:0px;
+	color:#3E3E3E;
+	
+	width:300px;
+	max-height:300px;
+	padding:5px;
+	overflow:auto;
+	
+	border:4px solid #E7E7DE;
+	border-top:0px;
+}
+	
+	#toggle{
+		float:right;
+		color:#ccc;
+	}
+	
+	header h1{
+		font-size:20px;
+	}
+	
+	header h1:hover{
+		
+	}
+	
+	header label{
+		font-weight:normal;
+		color:#969696;
+	}
+	
+	header input{
+		width: 100%;
+		padding:5px;
+		margin:5px auto 5px auto;
+	}
+
+
+a.delete {color:red;}
+
+.loading{
+	height:100px;
+	background:url('./images/ajax-loader.gif') no-repeat 50% 50%;
+}

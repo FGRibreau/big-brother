@@ -1,0 +1,63 @@
+<!doctype html public> 
+<html lang="en-us">
+<head>
+	<!--
+	 ______    _           ______                   _   __                     
+	|_   _ \  (_)         |_   _ \                 / |_[  |                    
+	  | |_) | __   .--./)   | |_) | _ .--.   .--. `| |-'| |--.  .---.  _ .--.  
+	  |  __'.[  | / /'`\;   |  __'.[ `/'`\]/ .'`\ \| |  | .-. |/ /__\\[ `/'`\] 
+	 _| |__) || | \ \._//  _| |__) || |    | \__. || |, | | | || \__., | |     
+	|_______/[___].',__`  |_______/[___]    '.__.' \__/[___]|__]'.__.'[___]    
+	             ( ( __))
+	-->
+	
+	<title>Big brother - Be notified when People check in some places - Gmap/foursquare/web notification api/localstorage</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Big Brother HAZ THE STYLE" charset="utf-8">
+</head>
+
+<body>
+
+<header>
+	<a href="?" id="toggle">Toggle</a>
+	<h1>Big Brother  
+		<a href="http://twitter.com/FGRibreau" title="Follow me on twitter">&#9733;</a>
+		<a href="https://github.com/FGRibreau/big-brother/" title="Github">&#9850;</a>
+	</h1>
+	<div class="panel">
+		<p>
+			<label for="">Add some places to monitor (<a href="?" id="list">list</a>)</label>
+			<input type="text" id="search" placeholder="Street name, monuments..."/>
+		</p>
+		<div id="results">
+		</div>
+	</div>
+</header>
+
+<div id="gmap"></div>
+
+<script type="text/javascript" charset="utf-8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="bigbrother.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+var bigBrother = null;
+
+function onGmapLoaded() {
+
+	bigBrother = new BigBrother($('#gmap')
+	,	$('#search')
+	,	$('#results')
+	,	$('#list')
+	,	$('#toggle')
+	,	{
+		clientId:location.host == 'hackathon.local' ? 
+			'AJLONX2QSCJIUIXQYHNPFUIHBAYSRFWK2A2EHRLJBNMZ5BWY' 
+		:	'1RRQ0VUPXTOSU50DF5XYFLO0KOJUHVIFQBIIHUFGWPOSKNIZ'
+	});
+}
+
+$.getScript('http://maps.google.com/maps/api/js?sensor=false&callback=onGmapLoaded');
+</script>
+</body>
+</html>
