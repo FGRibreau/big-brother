@@ -94,7 +94,7 @@ BigBrother.prototype = {
 		$.getJSON('https://api.foursquare.com/v2/venues/'
 		+venueId+'/herenow?oauth_token='
 		+this.foursquare.token+'&callback=?', function(data){
-			if(!data.response || (data.response 
+			if(!data.response || !data.response.hereNow.items || (data.response 
 			&& data.response.hereNow
 			&& data.response.hereNow.count == 0)){
 				return;
